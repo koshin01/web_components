@@ -49,11 +49,11 @@ const List: FC<Props> = (props) => {
 							</div>
 						</div>
 						{item.contentUrl && (
-							<img 
-								src="/chevron_right.svg" 
+							<img
+								src="/chevron_right.svg"
 								alt="Shape of right arrow"
 								className="m-0 lg:m-2 transition ease-in-out group-hover:-translate-x-2 duration-300"
-							 />
+							/>
 						)}
 					</Anchor>
 				</li>

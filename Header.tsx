@@ -20,14 +20,14 @@ const Header: FC<Props> = (props) => {
 					{props.subHome && (
 						<>
 							<span className="text-xl font-medium text-gray-300">/</span>
-							<a href={props.subHome.url}>{props.subHome.name}</a>				
+							<a href={props.subHome.url}>{props.subHome.name}</a>
 						</>
 					)}
 				</div>
 				<HamburgerMenu />
 			</nav>
 		</header>
-	)
-}
+	);
+};
 
 export default Header;
