@@ -8,6 +8,7 @@ interface Home {
 }
 
 interface Props {
+	homeName: string;
 	subHome?: Home;
 }
 
@@ -16,7 +17,7 @@ const Header: FC<Props> = (props) => {
 		<header className="p-4">
 			<nav className="flex justify-between">
 				<div className="flex gap-2 items-center">
-					<HomeLink />
+					<HomeLink name={props.homeName} />
 					{props.subHome && (
 						<>
 							<span className="text-xl font-medium text-gray-300">/</span>
