@@ -1,9 +1,25 @@
 import { useEffect, useState } from "react";
-import { NOTIFICATIONS } from "../consts";
+import type { FC } from "react";
 import List from "./List";
 import Toggle from "./Toggle";
 
-const SideMenu = () => {
+interface Image {
+	src: string;
+	alt: string;
+}
+
+interface Item {
+	name: string;
+	description?: string;
+	icon?: Image;
+	contentUrl?: string;
+}
+
+interface Props {
+	notices: Item[];
+}
+
+const SideMenu:FC<Props> = (props) => {
 	const [isOpen, setIsOpen] = useState(false);
 
 	useEffect(() => {
@@ -44,7 +60,7 @@ const SideMenu = () => {
 					<span className="sr-only">Close side menu</span>
 					<img src="/close.svg" alt="Shape of close" />
 				</button>
-				<List title="Notices" items={NOTIFICATIONS} />
+				<List title="Notices" items={props.notices} />
 				{/* <section className="flex flex-col gap-4">
 					<h3 className="text-slate-500">Would you like to be notified?</h3>
 					<Toggle checked={false} onChange={() => 0}/>
