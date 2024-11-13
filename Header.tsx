@@ -1,6 +1,6 @@
 import type { FC } from "react";
 import HomeLink from "./HomeLink.tsx";
-import HamburgerMenu from "./SideMenu.tsx";
+import SideMenu from "./SideMenu.tsx";
 
 interface Home {
 	name: string;
@@ -24,7 +24,7 @@ const Header: FC<Props> = (props) => {
 						</>
 					)}
 				</div>
-				<HamburgerMenu />
+				<SideMenu />
 			</nav>
 		</header>
 	);
