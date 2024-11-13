@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import type { FC } from "react";
 import List from "./List";
 import Toggle from "./Toggle";
+import closeImg from "./assets/close.svg";
+import notificationsImg from "./assets/notifications.svg";
 
 interface Image {
 	src: string;
@@ -16,7 +18,7 @@ interface Item {
 }
 
 interface Props {
-	notices: Item[];
+	notices?: Item[];
 }
 
 const SideMenu:FC<Props> = (props) => {
@@ -41,7 +43,7 @@ const SideMenu:FC<Props> = (props) => {
 				onClick={() => setIsOpen(true)}
 			>
 				<span className="sr-only">Open side menu</span>
-				<img src="/notifications.svg" alt="Shape of Bell" />
+				<img src={notificationsImg} alt="Shape of Bell" />
 			</button>
 			<div
 				className={`flex flex-col gap-7 fixed right-0 top-0 p-4 z-20 bg-gray-50 w-4/5 lg:w-1/4 h-screen transition-transform duration-700 ease-in-out transform ${
@@ -58,9 +60,9 @@ const SideMenu:FC<Props> = (props) => {
 					onClick={() => setIsOpen(false)}
 				>
 					<span className="sr-only">Close side menu</span>
-					<img src="/close.svg" alt="Shape of close" />
+					<img src={closeImg} alt="Shape of close" />
 				</button>
-				<List title="Notices" items={props.notices} />
+				{props.notices && <List title="Notices" items={props.notices} />}
 				{/* <section className="flex flex-col gap-4">
 					<h3 className="text-slate-500">Would you like to be notified?</h3>
 					<Toggle checked={false} onChange={() => 0}/>
