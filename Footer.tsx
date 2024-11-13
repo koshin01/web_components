@@ -11,7 +11,7 @@ const Footer: FC<Props> = (props) => {
 			{props.leftContent}
 			<span className="text-slate-500 font-medium ml-auto">
 				{"Designed by "}
-				<Anchor href="https://dbkoshin.com/" className="underline">koshin</Anchor>
+				<Anchor href="https://dbkoshin.com/" className="underline text-slate-500 font-medium">koshin</Anchor>
 			</span>
 		</footer>
 	);
