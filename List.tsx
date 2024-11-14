@@ -1,6 +1,6 @@
 import type { FC } from "react";
 import Anchor from "./Anchor";
-import chevronRight from "./assets/chevron_right.svg";
+import ChevronRightSvg from "./assets/ChevronRightSvg";
 
 interface Image {
 	src: string;
@@ -50,9 +50,8 @@ const List: FC<Props> = (props) => {
 							</div>
 						</div>
 						{item.contentUrl && (
-							<img
-								src={chevronRight}
-								alt="Shape of right arrow"
+							<ChevronRightSvg
+								title="Shape of right arrow"
 								className="m-0 lg:m-2 transition ease-in-out group-hover:-translate-x-2 duration-300"
 							/>
 						)}

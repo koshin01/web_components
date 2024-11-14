@@ -1,5 +1,5 @@
-import Anchor from "./Anchor.tsx";
 import type { FC } from "react";
+import Anchor from "./Anchor.tsx";
 
 interface Props {
 	name: string;
