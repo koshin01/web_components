@@ -50,10 +50,12 @@ const List: FC<Props> = (props) => {
 							</div>
 						</div>
 						{item.contentUrl && (
-							<ChevronRightSvg
-								title="Shape of right arrow"
-								className="m-0 lg:m-2 transition ease-in-out group-hover:-translate-x-2 duration-300"
-							/>
+							<div>
+								<ChevronRightSvg
+									title="Shape of right arrow"
+									className="m-0 lg:m-2 transition ease-in-out group-hover:-translate-x-2 duration-300"
+								/>
+							</div>
 						)}
 					</Anchor>
 				</li>
