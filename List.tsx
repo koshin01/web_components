@@ -41,7 +41,7 @@ const List: FC<Props> = (props) => {
 								/>
 							)}
 							<div className="flex flex-col">
-								<span className="font-semibold text-slate-800 text-2xl">
+								<span className="text-slate-800 text-lg">
 									{item.name}
 								</span>
 								{item.description && (
