@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import type { FC } from "react";
 import List from "./List";
-import NotificationSvg from "./assets/NotificationsSvg"
 import CloseSvg from "./assets/CloseSvg";
+import NotificationSvg from "./assets/NotificationsSvg";
 
 interface Image {
 	src: string;

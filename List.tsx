@@ -41,9 +41,7 @@ const List: FC<Props> = (props) => {
 								/>
 							)}
 							<div className="flex flex-col">
-								<span className="text-slate-800 text-lg">
-									{item.name}
-								</span>
+								<span className="text-slate-800 text-lg">{item.name}</span>
 								{item.description && (
 									<span className="text-slate-500">{item.description}</span>
 								)}
