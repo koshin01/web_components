@@ -15,22 +15,24 @@ interface Item {
 }
 
 interface Props {
+	isLoading?: boolean;
 	title?: string;
-	items: Item[];
+	items?: Item[];
 }
 
 const List: FC<Props> = (props) => {
+	const items: Item[] = props.isLoading || !props.items ? Array.from({ length: 10 }, (_, index) => ({ name: String(index) })) : props.items;
+
 	return (
 		<ul className="flex flex-col list-none p-0 m-0 lg:p-0 lg:m-0">
 			{props.title && <h3 className="text-gray-500">{props.title}</h3>}
-			{props.items.map((item) => (
-				<li key={item.name}>
+			{items.map((item) => (
+				<li key={item.name} className={props.isLoading ? "animate-pulse bg-gradient-to-br from-gray-300 to-gray-200 rounded-xl" : ""}>
 					<Anchor
 						href={item.contentUrl}
-						className={`flex items-center no-underline w-full p-4 ${
-							item.contentUrl &&
+						className={`flex items-center no-underline w-full min-h-24 p-4 ${item.contentUrl &&
 							"justify-between hover:bg-gray-100/50 rounded-xl group"
-						}`}
+							}`}
 					>
 						<div className="flex items-center gap-7">
 							{item.icon && (
@@ -41,7 +43,9 @@ const List: FC<Props> = (props) => {
 								/>
 							)}
 							<div className="flex flex-col">
-								<span className="text-slate-800 text-lg">{item.name}</span>
+								<span className="text-slate-800 text-md">
+									{!props.isLoading && item.name}
+								</span>
 								{item.description && (
 									<span className="text-slate-500">{item.description}</span>
 								)}
