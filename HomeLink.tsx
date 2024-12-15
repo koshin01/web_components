@@ -6,7 +6,7 @@ interface Props {
 }
 
 const HomeLink: FC<Props> = (props) => {
-	return <Anchor href="/">{props.name}</Anchor>;
+	return <Anchor href="/" className="font-['Avenir_Next'] no-underline font-semibold text-xl">{props.name}</Anchor>;
 };
 
 export default HomeLink;
