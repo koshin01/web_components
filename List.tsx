@@ -30,7 +30,7 @@ const List: FC<Props> = (props) => {
 				<li key={item.name} className={props.isLoading ? "animate-pulse bg-gradient-to-br from-gray-300 to-gray-200 rounded-xl" : ""}>
 					<Anchor
 						href={item.contentUrl}
-						className={`flex items-center no-underline w-full min-h-24 p-4 ${item.contentUrl &&
+						className={`flex items-center no-underline w-full min-h-24 py-4 pl-4 ${item.contentUrl &&
 							"justify-between hover:bg-gray-100/50 rounded-xl group"
 							}`}
 					>
@@ -55,7 +55,7 @@ const List: FC<Props> = (props) => {
 							<div>
 								<ChevronRightSvg
 									title="Shape of right arrow"
-									className="m-0 lg:m-2 transition ease-in-out group-hover:-translate-x-2 duration-300"
+									className="transition ease-in-out group-hover:-translate-x-2 duration-300"
 								/>
 							</div>
 						)}
